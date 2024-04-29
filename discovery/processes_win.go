@@ -1,3 +1,5 @@
+// processes_win.go filters and displays process details based on a user-provided process name filter
+
 package main
 
 import (

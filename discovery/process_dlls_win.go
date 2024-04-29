@@ -1,3 +1,5 @@
+// process_dlls_win.go lists DLL modules associated with a given process ID on Windows systems
+
 package main
 
 import (

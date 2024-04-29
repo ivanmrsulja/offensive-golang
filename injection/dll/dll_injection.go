@@ -1,3 +1,6 @@
+// dll_injection.go injects a (malicious) DLL into a specified process on Windows
+// systems using direct API calls for process manipulation and memory operations
+
 package main
 
 import (
@@ -32,7 +35,7 @@ func main() {
 
 	dwPID, _ := strconv.Atoi(os.Args[1])
 	DLLPath := os.Args[2]
-	
+
 	fmt.Printf("[*] trying to get a handle to the process (%d)\n", dwPID)
 
 	hProcess, _, err := openProcess.Call(PROCESS_VM_OPERATION|PROCESS_VM_WRITE, 0, uintptr(dwPID))

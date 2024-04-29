@@ -1,3 +1,5 @@
+// services_vulns.go performs scans on a specified target to check for vulnerabilities and Bitcoin service information
+
 package main
 
 import (
