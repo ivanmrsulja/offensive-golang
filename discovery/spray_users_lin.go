@@ -1,4 +1,4 @@
-// spray_users_lin.go sprays password as it attempts to run `whoami`
+// spray_users_lin.go sprays password by attempting to run `whoami`
 // as each user with a shell using a given password
 
 package main
