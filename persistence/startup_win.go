@@ -22,6 +22,6 @@ func main() {
 func copyToStartupFolder() error {
 	startupFolder := os.Getenv("APPDATA") + `\Microsoft\Windows\Start Menu\Programs\Startup\persistence.bat`
 	content := `@echo off
-				start calc.exe`
+				powershell -Command "Start-Process -FilePath 'calc.exe' -WindowStyle Hidden"`
 	return os.WriteFile(startupFolder, []byte(content), 0644)
 }
