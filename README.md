@@ -3,7 +3,7 @@
 </p>
 
 # Offensive Golang
-My experiments (mostly from educational research) in weaponizing [Go](https://go.dev/) for implant development and general offensive operations.
+My experiments (mostly from personal educational research) in weaponizing [Go](https://go.dev/) for implant development and general offensive operations.
 
 # Why Go?
 - **Native Compilation**: Compiles directly to machine code with no runtime dependencies, yielding lightweight binaries.
