@@ -1,3 +1,6 @@
+// simple reverse shell program
+// mostly used for demonstration purposes :D
+
 package main
 
 import (
