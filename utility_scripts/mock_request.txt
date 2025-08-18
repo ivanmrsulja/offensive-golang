@@ -1,0 +1,6 @@
+POST /admin.php HTTP/1.1
+Host: dateserver.htb
+Content-Length: 13
+Content-Type: application/x-www-form-urlencoded
+
+adminpw=admin
