@@ -9,7 +9,7 @@ My experiments (mostly from personal educational research) in weaponizing [Go](h
 - **Native Compilation**: Compiles directly to machine code with no runtime dependencies, yielding lightweight binaries.
 - **Easy Cross-Compilation**: Cross-compile for multiple OSes by setting GOOS and GOARCH, simplifying deployment.
 - **Readable Syntax**: Simple, C-like syntax with modern features makes Go easy to learn and maintain.
-- **Rich Standard Library**: Built-in support for networking, HTTP, JSON, and cryptography—ideal for security tools.
+- **Rich Standard Library**: Built-in support for networking, HTTP, JSON, and cryptography - ideal for security tools.
 - **Built-in Concurrency**: Goroutines and sync packages allow high-performance, concurrent programs suited for C2 infrastructure.
 - **Strong Tooling**: Tools like go test, go mod, and go vet streamline development and testing.
 - **Memory Safety**: Garbage collection reduces common memory vulnerabilities without long pauses.
